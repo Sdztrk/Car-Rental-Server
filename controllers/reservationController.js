@@ -39,7 +39,7 @@ exports.updateCReservation = async(req,res) => {
 
     const reservation = await reservationModal.findByIdAndUpdate(req.params.id, req.body,{new:true, runValidators:true})
 
-    res.status(202).json({
+    res.status(200).json({
         success:true,
         data:reservation
     })
@@ -50,7 +50,7 @@ exports.deleteReservation = async(req,res) => {
 
     await reservationModal.findByIdAndDelete(req.params.id)
 
-    res.status(201).json({
+    res.status(204).json({
         message:"Car deleted successfully"
     })
 }

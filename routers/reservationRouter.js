@@ -8,6 +8,7 @@ const {isAdmin,isLogin} = require("../middlewares/permissions")
 router.route("/reservations")
     .get(
         //swagger
+        
 
         //to see all reservations you need to be admin
         isAdmin,

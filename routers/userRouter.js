@@ -7,6 +7,11 @@ const {isAdmin,isLogin} = require("../middlewares/permissions")
 router.route("/users")
     .get(
         //swagger
+        /*
+            #swagger.tags = ["Users"]
+            #swagger.summary = "Returns a list of all users"
+            #swagger.description = "Sends all users."
+            */
 
         //To see all the users you need to be admin
         isAdmin,
@@ -14,6 +19,29 @@ router.route("/users")
     )
     .post(
         //swagger
+        /*
+                #swagger.tags = ["Users"]
+                #swagger.summary = "Create Users"
+                #swagger.parameters['body'] = {
+                    in: 'body',
+                    description: 'User data.',
+                    required: true,
+                    schema: {
+                        type: 'object',
+                        properties: {
+                            username: { type: 'string', example: 'nickname' },
+                            password: { type: 'string', example: 'password' },
+                            email: { type: 'string', example: 'test@gmail.com' },
+                            firstname: { type: 'string', example: 'firstname' },
+                            lastname: { type: 'string', example: 'lastname' },
+                            isActive: { type: 'boolean', example: 'true' },
+                            isAdmin: { type: 'boolean', example: 'false' },
+                        }
+                    }
+                },
+                #swagger.consumes = ['application/json'],
+                #swagger.produces = ['application/json'],
+            */
         //Everybody can create an account
         userController.postUser
     )

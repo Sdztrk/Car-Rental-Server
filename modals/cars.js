@@ -52,11 +52,13 @@ const carsSchema = new Schema(
         },
         createdId:{
             type:Schema.ObjectId,
-            ref:"Users"
+            ref:"Users",
+            required:true,
         },
         updatedId:{
             type:Schema.ObjectId,
-            ref:"Users"
+            ref:"Users",
+            required:true,
         },
     },
     {

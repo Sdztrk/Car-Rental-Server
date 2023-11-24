@@ -15,11 +15,13 @@ const reservationSchema = new Schema(
     {
         userId:{
             type:Schema.ObjectId,
-            ref:"Users"
+            ref:"Users",
+            required:true,
         },
         carId:{
             type:Schema.ObjectId,
-            ref:"Cars"
+            ref:"Cars",
+            required:true,
         },
         startDate:{
             type:Date,

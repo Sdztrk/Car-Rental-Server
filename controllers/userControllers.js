@@ -39,7 +39,7 @@ exports.updateUser = async(req,res) => {
 
     const user= await userModal.findByIdAndUpdate(req.params.id, req.body,{new:true, runValidators:true})
 
-    res.status(202).json({
+    res.status(200).json({
         success:true,
         data:user
     })
@@ -50,7 +50,7 @@ exports.deleteUser = async(req,res) => {
 
     await userModal.findByIdAndDelete(req.params.id)
 
-    res.status(201).json({
+    res.status(204).json({
         message:"User deleted successfully"
     })
 }

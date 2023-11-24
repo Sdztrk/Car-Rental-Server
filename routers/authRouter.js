@@ -43,7 +43,7 @@ router.get('/logout',
 /*
         #swagger.tags = ['Authentication']
         #swagger.summary = 'Logout'
-        #swagger.description = 'No need any doing for logout. You must deleted Bearer Token from your browser.'
+        #swagger.description = 'Bearer Token will be removed from your browser.'
     */
 authControllers.logout
 )

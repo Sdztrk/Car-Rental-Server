@@ -6,7 +6,7 @@ const {Schema,model} = require("mongoose")
 //Example input for user
 
 // {
-//     "username":"said updated",
+//     "username":"said",
 //     "password":"12345",
 //     "email":"email@emal.com",
 //     "firstname":"said1",

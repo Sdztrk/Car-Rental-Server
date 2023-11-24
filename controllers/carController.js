@@ -39,7 +39,7 @@ exports.updateCar = async(req,res) => {
 
     const car= await carModal.findByIdAndUpdate(req.params.id, req.body,{new:true, runValidators:true})
 
-    res.status(202).json({
+    res.status(200).json({
         success:true,
         data:car
     })
@@ -50,7 +50,7 @@ exports.deleteCar = async(req,res) => {
 
     await carModal.findByIdAndDelete(req.params.id)
 
-    res.status(201).json({
+    res.status(204).json({
         message:"Car deleted successfully"
     })
 }
