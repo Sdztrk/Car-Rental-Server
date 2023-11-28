@@ -21,7 +21,7 @@ router.route("/users")
         //swagger
         /*
                 #swagger.tags = ["Users"]
-                #swagger.summary = "Create Users"
+                #swagger.summary = "Create User"
                 #swagger.parameters['body'] = {
                     in: 'body',
                     description: 'User data.',
@@ -42,27 +42,41 @@ router.route("/users")
                 #swagger.consumes = ['application/json'],
                 #swagger.produces = ['application/json'],
             */
-        //Everybody can create an account
+        //Everybody can create an account/register
         userController.postUser
     )
 
 router.route("/users/:id")
     .get(
         //swagger
+        /*
+            #swagger.tags = ["Users"]
+            #swagger.summary = "Returns single user"
+            */
         //to see a user you need to be admin
         isAdmin,
         userController.getUser
     )
     .put(
         //swagger
+
+        /*
+            #swagger.tags = ["Users"]
+            #swagger.summary = "Update User"
+        */
+
         //to update a user you need to be admin
         isAdmin,
         userController.updateUser
     )
     .delete(
         //swagger
-        //to delete your account you need to be logged in
-        isLogin,
+         /*
+            #swagger.tags = ["Users"]
+            #swagger.summary = "Delete User"
+        */
+        //to delete an account you need to be admin
+        isAdmin,
         userController.deleteUser
     )
 

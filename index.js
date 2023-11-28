@@ -30,10 +30,10 @@ app.use(isAuthenticated)
 
 
 //routers
+app.use("/api",authRouter)
 app.use("/api",userRouter)
 app.use("/api",carRouter)
 app.use("/api",reservationRouter)
-app.use("/api",authRouter)
 
 //swagger
 const redoc = require('redoc-express')

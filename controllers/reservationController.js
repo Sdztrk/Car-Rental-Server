@@ -39,7 +39,7 @@ exports.updateCReservation = async(req,res) => {
 
     const reservation = await reservationModal.findByIdAndUpdate(req.params.id, req.body,{new:true, runValidators:true})
 
-    res.status(200).json({
+    res.status(202).json({
         success:true,
         data:reservation
     })
