@@ -3,7 +3,7 @@
 const jwt = require('jsonwebtoken')
 const setToken = require('../helpers/setToken')
 const User = require("../modals/users")
-
+const ACCESS_KEY = "1234567489789797"
 
 //POST /login
 exports.login = async (req, res) => {
@@ -13,15 +13,17 @@ exports.login = async (req, res) => {
         const user = await User.findOne({ email, password })
 
         if (user) {
-            if (user.isActive) {
-                res.send({
+            const accessT = jwt.sign({ user }, ACCESS_KEY);
+            //const refreshT =  jwt.sign(data.refresh, process.env.REFRESH_KEY, { expiresIn: data.longExpiresIn });
+            res.cookie("authToken", accessT, {
+                httpOnly: true,
+                secure: false,
+                sameSite:"none"
+            })
+                .send({
                     error: false,
-                    token: setToken(user)
+                    accessT,
                 })
-            } else {
-                res.errorStatusCode = 401
-                throw new Error('This account is not active.')
-            }
         } else {
             console.log('no user')
 

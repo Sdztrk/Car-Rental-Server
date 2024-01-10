@@ -1,22 +1,33 @@
 "use strict"
 //imports to use express
-const express = require("express")
+const express = require("express");
 const app = express()
 require("colors")
+//using cookie-parser
+const cookieParser = require("cookie-parser");
+app.use(cookieParser())
+
 //import for errors
 require("express-async-errors")
+
 //importing and configuration of dotenv
 require("dotenv").config()
+
 //Database connection
 const {DBconnect} = require("./config/DBconnect")
+
 //Routers
 const userRouter= require("./routers/userRouter")
 const carRouter= require("./routers/carRouter")
 const reservationRouter= require("./routers/reservationRouter")
 const authRouter = require("./routers/authRouter")
+
 //Middleware imports
 const {errorHandler} = require("./middlewares/errorHandler")
 const {isAuthenticated} = require("./middlewares/authentication")
+
+//importing cors
+const cors = require('cors');
 
 //connection to db
 DBconnect()
@@ -25,8 +36,12 @@ DBconnect()
 app.use(express.json())
 
 //Middlewares
-app.use(errorHandler)
-app.use(isAuthenticated)
+ app.use(cors({
+    credentials: true,
+    // origin:"http://localhost:3000/login"
+ }))
+ app.use(errorHandler)
+ app.use(isAuthenticated)
 
 
 //routers

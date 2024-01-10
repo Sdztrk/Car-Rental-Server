@@ -1,7 +1,7 @@
 "use strict"
 
-const {passwordEncryption} = require("../helpers/PasswordEncryption")
-const {Schema,model} = require("mongoose")
+const {passwordEncryption} = require("../helpers/PasswordEncryption");
+const {Schema,model} = require("mongoose");
 
 //Example input for user
 
@@ -50,7 +50,6 @@ const userSchema = new Schema(
             type:Boolean,
             default:false,
         },
-        
     },
     {
         timestamps:true

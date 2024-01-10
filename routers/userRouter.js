@@ -3,6 +3,8 @@
 const router = require("express").Router()
 const userController = require("../controllers/userControllers")
 const {isAdmin,isLogin} = require("../middlewares/permissions")
+const query = require("../middlewares/query")
+const users = require("../modals/users")
 
 router.route("/users")
     .get(
@@ -14,7 +16,8 @@ router.route("/users")
             */
 
         //To see all the users you need to be admin
-        isAdmin,
+        query(users),
+         isAdmin,
         userController.getUsers
     )
     .post(

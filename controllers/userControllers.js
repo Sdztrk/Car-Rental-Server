@@ -8,7 +8,7 @@ exports.getUsers = async(req,res) => {
     res.status(200).json({
         success:true,
         count:users.length,
-        data:users
+        data:users,
     })
 }
 

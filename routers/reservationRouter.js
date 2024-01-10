@@ -3,6 +3,8 @@
 const router = require("express").Router()
 const reservationController = require("../controllers/reservationController")
 const {isAdmin,isLogin} = require("../middlewares/permissions")
+const query = require("../middlewares/query")
+const reservations = require("../middlewares/query")
 
 
 router.route("/reservations")
@@ -13,7 +15,8 @@ router.route("/reservations")
             #swagger.summary = "Returns a list of all Reservations"
             #swagger.description = "Sends all Reservations."
             */
-
+        //You can search queries in reservations
+        query(reservations),
         //to see all reservations you need to be admin
         isAdmin,
         reservationController.getReservations
