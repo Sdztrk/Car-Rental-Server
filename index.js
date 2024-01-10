@@ -83,9 +83,9 @@ app.get('/', (req, res) => {
         message: 'Welcome to Car Rental API',
         api: {
             documents: {
-                swagger: 'http://localhost:5002/docs/swagger',
-                redoc: 'http://localhost:5002/docs/redoc',
-                json: 'http://localhost:5002/docs/json',
+                swagger: `http://${HOST}:${PORT}/docs/swagger`,
+                redoc: `http://${HOST}:${PORT}/docs/redoc`,
+                json: `http://${HOST}:${PORT}/docs/json`,
             },
             contact: 'said@gmail.com'
         },
