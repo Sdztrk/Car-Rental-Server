@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Car Rental API",
-    "description": "This API is designed for a Car Rental.",
+    "description": "This API is designed for Car Rental.",
     "version": "1.0.0"
   },
   "host": "localhost:5002",

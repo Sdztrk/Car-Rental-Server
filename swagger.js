@@ -3,9 +3,9 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
   info: {
     title: 'Car Rental API',
-    description: 'This API is designed for a Car Rental.'
+    description: 'This API is designed for Car Rental.'
   },
-  host: 'localhost:5002',
+  host: 'https://carrent-3dr6.onrender.com/',
   securityDefinitions: {
 		JWT: {
 			type: 'apiKey',

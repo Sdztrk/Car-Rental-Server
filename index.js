@@ -83,11 +83,11 @@ app.get('/', (req, res) => {
         message: 'Welcome to Car Rental API',
         api: {
             documents: {
-                swagger: `http://${HOST}:${PORT}/docs/swagger`,
-                redoc: `http://${HOST}:${PORT}/docs/redoc`,
-                json: `http://${HOST}:${PORT}/docs/json`,
+                swagger: `https://carrent-3dr6.onrender.com/docs/swagger`,
+                redoc: `https://carrent-3dr6.onrender.com/docs/redoc`,
+                json: `https://carrent-3dr6.onrender.com/docs/json`,
             },
-            contact: 'said@gmail.com'
+            contact: 'msaidozturk1@gmail.com'
         },
     })
 })
