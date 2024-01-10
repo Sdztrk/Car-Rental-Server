@@ -94,6 +94,8 @@ app.get('/', (req, res) => {
 
 //PORT Config
 const PORT = process.env.PORT || 5003
+const HOST = process.env.HOST || "127.0.0.1"
+const MODE = process.env.MODE || "production"
 app.listen(PORT, ()=> {
-    console.log(`App is running on ${PORT}`.yellow.underline)
+    console.log(`Server running in ${MODE} mode on http://${HOST}:${PORT}`.blue.underline)
 })
